@@ -2,7 +2,7 @@
 // Add a method name add 
 // The method should return the sum of the numbers in the main method. 
 // Extend the above for Subtraction Multiplication and Division methods as well
-// Calculator calc = new Calculator();
+// Calculator Calc = new Calculator();
 
 import java.util.Scanner;
 
@@ -23,10 +23,10 @@ class Calculator {
         return a / b;
     }
 }
-public class calc {
+public class Calc {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator calc = new Calculator();
+        Calculator Calc = new Calculator();
 
         System.out.print("Enter first number: ");
         double num1 = sc.nextDouble();
@@ -34,10 +34,10 @@ public class calc {
         System.out.print("Enter second number: ");
         double num2 = sc.nextDouble();
 
-        System.out.println("Addition: " + calc.add(num1, num2));
-        System.out.println("Subtraction: " + calc.sub(num1, num2));
-        System.out.println("Multiplication: " + calc.mul(num1, num2));
-        System.out.println("Division: " + calc.div(num1, num2));
+        System.out.println("Addition: " + Calc.add(num1, num2));
+        System.out.println("Subtraction: " + Calc.sub(num1, num2));
+        System.out.println("Multiplication: " + Calc.mul(num1, num2));
+        System.out.println("Division: " + Calc.div(num1, num2));
         sc.close();
     }
 }

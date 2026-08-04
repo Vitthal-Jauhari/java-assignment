@@ -1,8 +1,8 @@
-// Write a program to check if a given string or number is a palindrome
+// Write a program to check if a given string or number is a Palindrome
 
 import java.util.Scanner;
 
-public class palindrome {
+public class Palindrome {
     static boolean isPalindromeString(String str) {
         int left = 0, right = str.length() - 1;
         while (left < right) {
@@ -32,17 +32,17 @@ public class palindrome {
         System.out.print("Enter a string: ");
         String str = sc.next();
         if (isPalindromeString(str)) {
-            System.out.println(str + " is a palindrome");
+            System.out.println(str + " is a Palindrome");
         } else {
-            System.out.println(str + " is not a palindrome");
+            System.out.println(str + " is not a Palindrome");
         }
 
         System.out.print("Enter a number: ");
         int num = sc.nextInt();
         if (isPalindromeNumber(num)) {
-            System.out.println(num + " is a palindrome");
+            System.out.println(num + " is a Palindrome");
         } else {
-            System.out.println(num + " is not a palindrome");
+            System.out.println(num + " is not a Palindrome");
         }
         sc.close();
     }

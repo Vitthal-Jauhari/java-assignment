@@ -1,5 +1,5 @@
 // WAP to declare all primitive data types and their minimum and maximum values
-public class variables {
+public class Variables {
     public static void main(String[] args) {
         // byte
         byte minByte = Byte.MIN_VALUE;

@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class maps{
+public class Maps{
     public static void main(String[] args) {
         HashMap<String, Integer> empIDs = new HashMap();
 

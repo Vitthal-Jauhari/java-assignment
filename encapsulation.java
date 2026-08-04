@@ -1,4 +1,4 @@
-// WAP to demonstrate encapsulation in Java
+// WAP to demonstrate Encapsulation in Java
 
 class Student {
     private String name;
@@ -25,7 +25,7 @@ class Student {
     }
 }
 
-public class encapsulation {
+public class Encapsulation {
     public static void main(String[] args) {
         Student s1 = new Student();
         s1.setName("Vitthal");

@@ -1,4 +1,4 @@
-// Demonstrate the concept of constructors in OOP with a program
+// Demonstrate the concept of Constructors in OOP with a program
 
 class Book {
     String title;
@@ -21,7 +21,7 @@ class Book {
     }
 }
 
-public class constructors {
+public class Constructors {
     public static void main(String[] args) {
         Book b1 = new Book();
         Book b2 = new Book("Java Basics", 499.0);

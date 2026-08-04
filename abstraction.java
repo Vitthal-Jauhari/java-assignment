@@ -1,4 +1,4 @@
-// WAP to demonstrate abstraction in Java using interfaces
+// WAP to demonstrate Abstraction in Java using interfaces
 
 interface Shape {
     void area();
@@ -22,7 +22,7 @@ class Triangle implements Shape {
     }
 }
 
-public class abstraction {
+public class Abstraction {
     public static void main(String[] args) {
         Shape s1 = new Square();
         Shape s2 = new Triangle();

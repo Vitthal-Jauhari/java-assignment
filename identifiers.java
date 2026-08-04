@@ -1,6 +1,6 @@
-// Write a program to identify valid and invalid identifiers in Java
+// Write a program to identify valid and invalid Identifiers in Java
 
-public class identifiers {
+public class Identifiers {
     static boolean isValidIdentifier(String id) {
         if (id.isEmpty()) {
             return false;

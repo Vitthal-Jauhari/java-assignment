@@ -1,4 +1,4 @@
-// WAP to demonstrate inheritance and polymorphism
+// WAP to demonstrate Inheritance and polymorphism
 
 class Car {
     void start() {
@@ -27,7 +27,7 @@ class Honda extends Car {
     }
 }
 
-public class inheritance {
+public class Inheritance {
     public static void main(String[] args) {
         // Polymorphism: Parent reference can hold child objects
         Car car1 = new Baleno();

@@ -1,4 +1,4 @@
-// Write a program to demonstrate method overloading and method overriding.
+// Write a program to demonstrate Method overloading and Method overriding.
 
 class Person {
     void work() {
@@ -24,7 +24,7 @@ class Calculator {
     }
 }
 
-public class method {
+public class Method {
     public static void main(String[] args) {
         Calculator c = new Calculator();
 

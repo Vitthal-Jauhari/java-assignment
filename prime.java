@@ -1,7 +1,7 @@
-// Write a program to check if a number is prime using a while loop.
+// Write a program to check if a number is Prime using a while loop.
 
 import java.util.Scanner;
-public class prime {
+public class Prime {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number: ");
@@ -16,9 +16,9 @@ public class prime {
             i++;
         }
         if (isPrime) {
-            System.out.println(n + " is a prime number");
+            System.out.println(n + " is a Prime number");
         } else {
-            System.out.println(n + " is not a prime number");
+            System.out.println(n + " is not a Prime number");
         }
     }
 }

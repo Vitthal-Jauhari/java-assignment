@@ -1,4 +1,4 @@
-// Implement a singleton class in Java
+// Implement a Singleton class in Java
 
 class Logger {
     private static Logger instance;
@@ -20,7 +20,7 @@ class Logger {
     }
 }
 
-public class singleton {
+public class Singleton {
     public static void main(String[] args) {
         Logger l1 = Logger.getInstance();
         Logger l2 = Logger.getInstance();
