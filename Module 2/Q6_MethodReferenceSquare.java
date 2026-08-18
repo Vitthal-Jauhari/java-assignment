@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.function.Function;
 
 public class Q6_MethodReferenceSquare {
@@ -7,7 +8,14 @@ public class Q6_MethodReferenceSquare {
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         Function<Integer, Integer> squareFunc = Q6_MethodReferenceSquare::square;
-        System.out.println("Square of 7: " + squareFunc.apply(7));
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        System.out.println("Square of " + num + ": " + squareFunc.apply(num));
+
+        sc.close();
     }
 }
