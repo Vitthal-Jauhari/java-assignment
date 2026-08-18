@@ -4,7 +4,12 @@ import java.util.Scanner;
 
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] arr = {5, 12, 19, 23, 34, 45, 56};
+        int[] arr = { 5, 12, 19, 23, 34, 45, 56 };
+        System.out.print("Array: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter number to search: ");
