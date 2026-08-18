@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Q7_TryCatchFinally {
 
     static void divideTryCatch(int a, int b) {
@@ -21,19 +19,10 @@ public class Q7_TryCatchFinally {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter numerator: ");
-        int a = sc.nextInt();
-        System.out.print("Enter denominator: ");
-        int b = sc.nextInt();
-
         System.out.println("--- try-catch ---");
-        divideTryCatch(a, b);
+        divideTryCatch(10, 0);
 
         System.out.println("--- try-catch-finally ---");
-        divideTryCatchFinally(a, b);
-
-        sc.close();
+        divideTryCatchFinally(10, 0);
     }
 }

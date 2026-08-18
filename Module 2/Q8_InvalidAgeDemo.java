@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Q8_InvalidAgeDemo {
 
     static void checkAge(int age) throws InvalidAgeException {
@@ -10,16 +8,10 @@ public class Q8_InvalidAgeDemo {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter your age: ");
-        int age = sc.nextInt();
-
         try {
-            checkAge(age);
+            checkAge(15);
         } catch (InvalidAgeException e) {
             System.out.println("Exception: " + e.getMessage());
         }
-
-        sc.close();
     }
 }
