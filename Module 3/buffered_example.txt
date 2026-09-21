@@ -1,0 +1,3 @@
+Line 1: High-performance buffered writing.
+Line 2: Buffered character streams reduce disk I/O operations.
+Line 3: Java I/O provides smooth and efficient stream processing.
