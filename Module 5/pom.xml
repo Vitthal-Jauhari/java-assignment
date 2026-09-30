@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project Coordinates -->
+    <groupId>com.university.assignment</groupId>
+    <artifactId>module5-annotations-maven</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Module 5: Java Annotations and Maven Framework</name>
+    <description>Demonstrates Maven configuration, plugins, dependencies, exclusions, and lifecycle</description>
+
+    <!-- Properties: Java Version and Encoding Configuration (Q38) -->
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.jupiter.version>5.10.0</junit.jupiter.version>
+    </properties>
+
+    <!-- Dependencies and Transitive Dependency Exclusions (Q34, Q42, Q43, Q48) -->
+    <dependencies>
+        <!-- Compile Scope: JSON processing library -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.2</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Transitive Dependency with Exclusion Demonstration (Q43) -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.7</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.11</version>
+            <exclusions>
+                <!-- Exclude transitive dependency to resolve version conflicts -->
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Test Scope: JUnit 5 for Unit Testing (Q48) -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Build and Plugin Configurations (Q44, Q45, Q46, Q50) -->
+    <build>
+        <plugins>
+            <!-- 1. Maven Compiler Plugin (Q44) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- 2. Maven Surefire Plugin to Run Unit Tests (Q50) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*TestCase.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- 3. Maven JAR Plugin to package executable JAR with Main-Class (Q45) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>Q10_UserInputValidationFramework</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Remote Repository Distribution Management (Q49) -->
+    <distributionManagement>
+        <repository>
+            <id>releases-repo</id>
+            <name>Internal Enterprise Releases</name>
+            <url>https://nexus.university.edu/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots-repo</id>
+            <name>Internal Enterprise Snapshots</name>
+            <url>https://nexus.university.edu/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

@@ -1,0 +1,62 @@
+<!-- Multi-Module Parent pom.xml Example (Q47 and Practical Exercise 5) -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.enterprise.app</groupId>
+    <artifactId>enterprise-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- Root pom MUST have packaging 'pom' to orchestrate child submodules -->
+    <packaging>pom</packaging>
+
+    <name>Enterprise Multi-Module Parent Project</name>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>6.0.12</spring.version>
+        <log4j.version>2.20.0</log4j.version>
+    </properties>
+
+    <!-- Submodules registered under parent -->
+    <modules>
+        <module>common-core</module>
+        <module>data-access</module>
+        <module>business-services</module>
+        <module>web-api</module>
+    </modules>
+
+    <!-- DependencyManagement: Centralizes library versions for all child modules without forcing inclusion -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- Shared Dependencies inherited directly by ALL child modules -->
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
